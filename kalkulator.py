@@ -21,13 +21,12 @@ def calculate():
 
         # Calculate kapara
         kapara = ukupna_cijena * postotak_za_kaparu
+        preostalo_za_kredit = ukupna_cijena * (1 - postotak_za_kaparu)
         kapara -= vlastito_ucesce
 
         if kapara <= 0:
-            preostalo_za_kredit = ukupna_cijena + kapara
+            preostalo_za_kredit += kapara
             kapara = 0
-        else:
-            preostalo_za_kredit = ukupna_cijena - kapara
 
         if preostalo_za_kredit <= 0:
             preostalo_za_kredit = 0
