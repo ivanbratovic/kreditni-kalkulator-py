@@ -56,6 +56,8 @@ def calculate():
         ukupni_mjesecni_trosak = anuitet_stambeni + anuitet_gotovinski
 
         # Update output fields
+        label_za_stambeni_cijena_value.config(text=f"{preostalo_za_kredit:.2f} EUR")
+        label_za_gotovinski_cijena_value.config(text=f"{kapara:.2f} EUR")
         label_anuitet_stambeni_value.config(text=f"{anuitet_stambeni:.2f} EUR")
         label_anuitet_gotovinski_value.config(text=f"{anuitet_gotovinski:.2f} EUR")
         label_ukupna_cijena_value.config(text=f"{ukupna_cijena:.2f} EUR")
@@ -139,40 +141,50 @@ label_ukupna_cijena.grid(row=10, column=0, padx=10, pady=5, sticky="e")
 label_ukupna_cijena_value = tk.Label(root, text="0.00 EUR", bg="#f0f0f5", font=("Arial", 10))
 label_ukupna_cijena_value.grid(row=10, column=1, padx=10, pady=5, sticky="w")
 
+label_za_stambeni_cijena = tk.Label(root, text="Dio za stambeni kredit:", bg="#f0f0f5", font=("Arial", 10))
+label_za_stambeni_cijena.grid(row=11, column=0, padx=10, pady=5, sticky="e")
+label_za_stambeni_cijena_value = tk.Label(root, text="0.00 EUR", bg="#f0f0f5", font=("Arial", 10))
+label_za_stambeni_cijena_value.grid(row=11, column=1, padx=10, pady=5, sticky="w")
+
+label_za_gotovinski_cijena = tk.Label(root, text="Dio za gotovinski kredit:", bg="#f0f0f5", font=("Arial", 10))
+label_za_gotovinski_cijena.grid(row=12, column=0, padx=10, pady=5, sticky="e")
+label_za_gotovinski_cijena_value = tk.Label(root, text="0.00 EUR", bg="#f0f0f5", font=("Arial", 10))
+label_za_gotovinski_cijena_value.grid(row=12, column=1, padx=10, pady=5, sticky="w")
+
 label_anuitet_stambeni = tk.Label(root, text="Anuitet za stambeni kredit:", bg="#f0f0f5", font=("Arial", 10))
-label_anuitet_stambeni.grid(row=11, column=0, padx=10, pady=5, sticky="e")
+label_anuitet_stambeni.grid(row=13, column=0, padx=10, pady=5, sticky="e")
 label_anuitet_stambeni_value = tk.Label(root, text="0.00 EUR", bg="#f0f0f5", font=("Arial", 10, "bold"))
-label_anuitet_stambeni_value.grid(row=11, column=1, padx=10, pady=5, sticky="w")
+label_anuitet_stambeni_value.grid(row=13, column=1, padx=10, pady=5, sticky="w")
 
 label_ukupno_stambeni = tk.Label(root, text="Ukupno za plaćanje:", bg="#f0f0f5", font=("Arial", 10))
-label_ukupno_stambeni.grid(row=12, column=0, padx=10, pady=5, sticky="e")
+label_ukupno_stambeni.grid(row=14, column=0, padx=10, pady=5, sticky="e")
 label_ukupno_stambeni_value = tk.Label(root, text="0.00 EUR", bg="#f0f0f5", font=("Arial", 10))
-label_ukupno_stambeni_value.grid(row=12, column=1, padx=10, pady=5, sticky="w")
+label_ukupno_stambeni_value.grid(row=14, column=1, padx=10, pady=5, sticky="w")
 
 label_kamata_stambeni = tk.Label(root, text="Od toga je kamata:", bg="#f0f0f5", font=("Arial", 10))
-label_kamata_stambeni.grid(row=13, column=0, padx=10, pady=5, sticky="e")
+label_kamata_stambeni.grid(row=15, column=0, padx=10, pady=5, sticky="e")
 label_kamata_stambeni_value = tk.Label(root, text="0.00 EUR", bg="#f0f0f5", font=("Arial", 10))
-label_kamata_stambeni_value.grid(row=13, column=1, padx=10, pady=5, sticky="w")
+label_kamata_stambeni_value.grid(row=15, column=1, padx=10, pady=5, sticky="w")
 
 label_anuitet_gotovinski = tk.Label(root, text="Anuitet za gotovinski kredit:", bg="#f0f0f5", font=("Arial", 10))
-label_anuitet_gotovinski.grid(row=14, column=0, padx=10, pady=5, sticky="e")
+label_anuitet_gotovinski.grid(row=16, column=0, padx=10, pady=5, sticky="e")
 label_anuitet_gotovinski_value = tk.Label(root, text="0.00 EUR", bg="#f0f0f5", font=("Arial", 10, "bold"))
-label_anuitet_gotovinski_value.grid(row=14, column=1, padx=10, pady=5, sticky="w")
+label_anuitet_gotovinski_value.grid(row=16, column=1, padx=10, pady=5, sticky="w")
 
 label_ukupno_gotovinski = tk.Label(root, text="Ukupno za plaćanje:", bg="#f0f0f5", font=("Arial", 10))
-label_ukupno_gotovinski.grid(row=15, column=0, padx=10, pady=5, sticky="e")
+label_ukupno_gotovinski.grid(row=17, column=0, padx=10, pady=5, sticky="e")
 label_ukupno_gotovinski_value = tk.Label(root, text="0.00 EUR", bg="#f0f0f5", font=("Arial", 10))
-label_ukupno_gotovinski_value.grid(row=15, column=1, padx=10, pady=5, sticky="w")
+label_ukupno_gotovinski_value.grid(row=17, column=1, padx=10, pady=5, sticky="w")
 
-label_kamata_gotovinski = tk.Label(root, text="Ukupna kamata:", bg="#f0f0f5", font=("Arial", 10))
-label_kamata_gotovinski.grid(row=16, column=0, padx=10, pady=5, sticky="e")
+label_kamata_gotovinski = tk.Label(root, text="Od toga je kamata:", bg="#f0f0f5", font=("Arial", 10))
+label_kamata_gotovinski.grid(row=18, column=0, padx=10, pady=5, sticky="e")
 label_kamata_gotovinski_value = tk.Label(root, text="0.00 EUR", bg="#f0f0f5", font=("Arial", 10))
-label_kamata_gotovinski_value.grid(row=16, column=1, padx=10, pady=5, sticky="w")
+label_kamata_gotovinski_value.grid(row=18, column=1, padx=10, pady=5, sticky="w")
 
 label_ukupni_trosak = tk.Label(root, text="Ukupni mjesečni trošak:", bg="#f0f0f5", font=("Arial", 10))
-label_ukupni_trosak.grid(row=17, column=0, padx=10, pady=5, sticky="e")
+label_ukupni_trosak.grid(row=19, column=0, padx=10, pady=5, sticky="e")
 label_ukupni_trosak_value = tk.Label(root, text="0.00 EUR", bg="#f0f0f5", font=("Arial", 10, "bold"))
-label_ukupni_trosak_value.grid(row=17, column=1, padx=10, pady=5, sticky="w")
+label_ukupni_trosak_value.grid(row=19, column=1, padx=10, pady=5, sticky="w")
 
 # Run the application
 root.mainloop()
