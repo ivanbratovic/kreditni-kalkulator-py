@@ -5,7 +5,7 @@ Računa otplatni plan kupnje nekretnine, koristeći stambeni kredit te gotovinsk
 ![image](https://github.com/user-attachments/assets/04b073c2-ad2b-4392-8abe-c527fb6e2b41)
 
 
-Napisano programski jezik Python.
+Napisano programskim jezikom Python.
 
 ## Pokretanje binarne datoteke
 
