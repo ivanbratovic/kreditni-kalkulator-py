@@ -7,5 +7,5 @@ Zahtijeva instaliran `Tkinter` Python modul, koji se **ne može** instalirati pr
 Pokretanje:
 
 ```sh
-python3 ./kalkulator.py
+python3 ./calculator.py
 ```
