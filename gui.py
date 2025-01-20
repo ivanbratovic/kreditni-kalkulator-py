@@ -233,7 +233,7 @@ class LoanCalculatorGUI:
 
         for field_id, value in updates.items():
             if field_id in self.output_labels:
-                if value == 0 and "gotovinski" in field_id:
+                if value <= 10 and "gotovinski" in field_id:
                     self.output_labels[field_id].config(text="Nije potreban")
                 else:
                     self.output_labels[field_id].config(text=f"{value:.2f} EUR")
